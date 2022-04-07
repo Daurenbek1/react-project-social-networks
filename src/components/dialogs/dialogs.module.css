@@ -1,0 +1,76 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: #dce1e6;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #5181b8;
+}
+
+.dialogsItems {
+    padding: 10px;
+    color: white;
+}
+.dialogsItems .active {
+    color: gold;
+}
+.messages {
+    padding: 10px;
+}
+
+.messages .message {
+    color: white;
+}
+.dialogItem {
+    color: #000;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-decoration: none;
+    display: flex;
+}
+.dialog {
+    padding-bottom: 5px;
+}
+.itemLogo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 100%;
+    border: 1px solid #5181b8;
+}
+.name {
+    margin-top: calc(50% - 44px);
+}
+.messageInner {
+    margin-top: 20px;
+    display: flex;
+}
+.messageInput {
+    height: 200px;
+    width: 600px;
+    outline: none;
+    border: none;
+    resize: none;
+    border: 1px solid #5181b8;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+.messageSend {
+    height: 40px;
+    margin-left: 10px;
+    background-color: #69aaf5;
+    border: none;
+    color: #fff;
+    text-transform: lowercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+    border: 1px solid transparent;
+}
+.messageSend:hover {
+    color: #69aaf5;
+    background-color: #fff;
+    border: 1px solid #69aaf5;
+}
+

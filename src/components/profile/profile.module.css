@@ -1,0 +1,11 @@
+.content {
+    grid-area: c;
+    background-color: #dce1e6;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #5181b8;
+  }
+  .item {
+    color: greenyellow;
+  }
+  
