@@ -8,8 +8,8 @@ let state = {
         posts: [
             { id: 1, message: 'Hi, how are you', likesCount: 13},
             { id: 2, message: 'It is my first post', likesCount: 11},
-            { id: 2, message: 'Blabla', likesCount: 112},
-            { id: 2, message: 'Ohou', likesCount: 144}
+            { id: 3, message: 'Blabla', likesCount: 112},
+            { id: 4, message: 'Ohou', likesCount: 144}
           ],
           newPostText: 'it-kamasutra.com'
     },
@@ -35,11 +35,11 @@ let state = {
 
 window.state = state;
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
-    likesCount: 0
+    message: state.profilePage.newPostText,
+    likesCount: 4
   };
 
   state.profilePage.posts.push(newPost);
@@ -56,11 +56,11 @@ export const updateNewPostText = (newText) => {
 
 
 export const subscribe = (observer) => {
-  rerenderEntireTree = observer; // наблюдатель 
+  rerenderEntireTree = observer;
 }
 
 
 
-export default state
+export default state;
 
 // store - OOP

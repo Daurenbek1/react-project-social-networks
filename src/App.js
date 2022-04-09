@@ -15,7 +15,7 @@ function App(props) {
       <div className='app-wrapper'>
         <Header />
         <Navbar />
-        <div class='app-wrapper-content'>
+        <div className='app-wrapper-content'>
             <Routes>
                <Route path="/dialogs" 
                element={<Dialogs state={props.state.dialogsPage} 
@@ -24,7 +24,7 @@ function App(props) {
                element={<Profile 
                profilePage={props.state.profilePage}
                addPost={props.addPost}
-               updateNewPostText={updateNewPostText}/>}/>
+               updateNewPostText={props.updateNewPostText}/>}/>
                <Route path="/" 
                element={<News/>}/>
             </Routes>
