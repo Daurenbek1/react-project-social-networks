@@ -23,8 +23,8 @@ function App(props) {
                <Route path="/profile" 
                element={<Profile 
                profilePage={props.state.profilePage}
-               addPost={props.addPost}
-               updateNewPostText={props.updateNewPostText}/>}/>
+               dispatch={props.dispatch}
+               />}/>
                <Route path="/" 
                element={<News/>}/>
             </Routes>
