@@ -1,7 +1,11 @@
-const ADD_POST  = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND_MESSAGE';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
+
+
+
+
 
 let store = {
   _state: {
@@ -44,43 +48,18 @@ let store = {
     this._callSubscriber = observer;
   },
   dispatch(action) { // { type: 'ADD-POST' }
-    if(action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 4
-      };
+
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
     
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_BODY){
-      this._state.dialogsPage.newMessageBody = action.body;
-      this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE){
-      let body = this._state.dialogsPage.newMessageBody;
-      this._state.dialogsPage.newMessageBody = '';
-      this._state.dialogsPage.messages.push({id: 5, message: body});
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state)
   }
 }
 
-export const addPostActionCreater = () => ({
-    type: ADD_POST
-})
 
 
-export const updateNewPostActionCreater = (text) => 
-    ({type: UPDATE_NEW_POST_TEXT, newText: text})
-
-
-export const sendMessageCreator = () => ({ type: SEND_MESSAGE})
-
-export const updateNewsMessageBodyCreator = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
 export default store;
 
