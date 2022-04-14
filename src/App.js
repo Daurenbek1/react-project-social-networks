@@ -5,8 +5,8 @@ import Header from './components/header/Header';
 import Dialogs from './components/dialogs/Dialogs';
 import News from './components/news/news';
 import { BrowserRouter, Route, Routes }  from "react-router-dom";
-import { addPost } from './redux/state';
-import { updateNewPostText } from './redux/state';
+import { addPost } from './redux/store';
+import { updateNewPostText } from './redux/store';
 
 
 function App(props) {
